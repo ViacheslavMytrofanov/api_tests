@@ -2,7 +2,7 @@ node {
 
     stage("checkout repo"){
         git branch: 'tests_for_api',
-        credentialsId: 'e1be5152-cc18-4b6b-b186-10304e70cf71',
-        url: 'https://github.com/v-mytrofanov/tests_for_api'
+        credentialsId: '76b0ab74-f49c-48ef-bba4-d1e8a9b8233b',
+        url: 'https://github.com/ViacheslavMytrofanov/api_tests'
     }
 }
