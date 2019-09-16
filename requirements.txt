@@ -1,0 +1,8 @@
+pytest
+requests
+faker
+pytest-env
+allure-pytest
+jsonpath-rw
+assertpy
+pyhamcrest
