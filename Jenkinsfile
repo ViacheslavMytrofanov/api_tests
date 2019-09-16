@@ -2,7 +2,6 @@ node {
 
     stage("Checkout repo"){
         git branch: 'master',
-        credentialsId: '9085ac67-9308-4190-b604-32a2c814837a',
         url: 'https://github.com/ViacheslavMytrofanov/api_tests'
     }
 
@@ -12,5 +11,17 @@ node {
 
     stage('Test') {
         sh 'pipenv run pytest tests -sv --alluredir=allure_results'
+    }
+
+    stage("Report") {
+    script {
+            allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure_results']]
+            ])
+            }
     }
 }
