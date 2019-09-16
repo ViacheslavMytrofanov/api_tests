@@ -5,7 +5,7 @@ import allure
 from src.response import AssertableResponse
 
 
-class ApiService(object):
+class ApiService:
 
     def __init__(self):
         self._base_url = os.environ['BASE_URL']
@@ -23,3 +23,7 @@ class UserApiService(ApiService):
     @allure.step
     def create_user(self, user):
         return AssertableResponse(self._post("/auth/signup", user))
+
+    @allure.step
+    def change_password(self, user):
+        return AssertableResponse(self._post("/auth/resetPassword", user))

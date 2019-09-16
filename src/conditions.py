@@ -3,7 +3,7 @@ import jsonpath_rw
 from assertpy import assert_that
 
 
-class Condition(object):
+class Condition:
 
     def __init__(self):
         pass

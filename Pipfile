@@ -13,6 +13,7 @@ pytest-env = "*"
 allure-pytest = "*"
 jsonpath-rw = "*"
 assertpy = "*"
+pyhamcrest = "*"
 
 [requires]
 python_version = "3.7"
