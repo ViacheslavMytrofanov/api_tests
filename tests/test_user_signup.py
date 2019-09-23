@@ -19,4 +19,4 @@ def test_user_cannot_signup_with_same_credentials(faker):
     response = UserApiService().create_user(user)
     response.should_have(status_code(500))
     response.should_have(body("Message", assert_that({'Message': 'AdSaver. User allready exists'})
-                              .contains_value('AdSaver. User allready exists')))
+                              .contains_value('ERROR_AdSaver. User allready exists')))

@@ -13,4 +13,4 @@ def test_not_existed_user_cannot_change_password(faker):
     user = {"email": faker.email(), "password": "123qwe", "confirmPassword": "123qwe"}
     response = UserApiService().change_password(user)
     response.should_have(status_code(400))
-    response.should_have(assert_that({'Message': 'Користувача з таким логіном не знайдено'}).contains_value('Користувача з таким логіном не знайдено'))
+    response.should_have(body('Message', assert_that({'Message': 'Користувача з таким логіном не знайдено'}).contains_value('Користувача з таким логіном не знайдено')))
